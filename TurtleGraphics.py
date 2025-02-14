@@ -11,7 +11,40 @@ def drawSquare(myTurtle, size):
         myTurtle.forward(size)
         myTurtle.right(90)
 
-
+def drawPolygon(cat, sides):
+    for s in range(sides):
+        cat.forward(60)
+        cat.right(360/sides)
+        
+        
+def fillCorner(dog, corner):
+    drawSquare(dog, 120)
+    
+    if corner == 1:
+        dog.begin_fill()
+        drawSquare(dog, 60)
+        dog.end_fill()
+    elif corner == 2:
+        dog.forward(60)
+        dog.begin_fill()
+        drawSquare(dog, 60)
+        dog.end_fill()
+    elif corner == 3:
+        dog.left(270)
+        dog.forward(60)
+        dog.left(90)
+        dog.begin_fill()
+        drawSquare(dog, 60)
+        dog.end_fill()
+    elif corner == 4:
+        dog.forward(120)
+        dog.left(270)
+        dog.forward(120)
+        dog.right(90)
+        dog.begin_fill()
+        drawSquare(dog, 60)
+        dog.end_fill()
+        
 def main():
     myTurtle = turtle.Turtle()
     # drawPolygon(myTurtle, 5) #draws a pentagon
